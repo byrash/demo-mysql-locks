@@ -1,0 +1,8 @@
+FROM golang:1.19-alpine
+WORKDIR /app
+COPY go.mod ./
+COPY *.go ./
+RUN go get -u 
+RUN go build -o /yellow-app
+EXPOSE 8080
+CMD [ "/yellow-app" ]
